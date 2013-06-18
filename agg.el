@@ -1,7 +1,7 @@
 (defun chomp (str)
   (replace-regexp-in-string "[\n\r]+$" "" str))
 
-(defun agrep (grep-dir command-args)
+(defun agg (grep-dir command-args)
   (interactive
    (let ((dir (chomp (shell-command-to-string "pwd"))))
      (list
@@ -18,4 +18,4 @@
                  grep-dir)))
     (grep command)))
 
-(provide 'agrep)
+(provide 'agg)
