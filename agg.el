@@ -18,12 +18,12 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-(defun chomp (str)
+(defun agg-chomp (str)
   (replace-regexp-in-string "[\n\r]+$" "" str))
 
 (defun agg (grep-dir command-args)
   (interactive
-   (let ((dir (chomp (shell-command-to-string "pwd"))))
+   (let ((dir (agg-chomp (shell-command-to-string "pwd"))))
      (list
       (read-file-name
        "Directory for agrep: " dir dir t)
